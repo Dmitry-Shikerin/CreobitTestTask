@@ -1,4 +1,5 @@
-﻿using Sources.BoundedContexts.Scenes.Infrastructure.Factories.Controllers.Implementation;
+﻿using Sources.BoundedContexts.MainMenuForms.Infrastructure.Factories.Controllers;
+using Sources.BoundedContexts.Scenes.Infrastructure.Factories.Controllers.Implementation;
 using Sources.BoundedContexts.Scenes.Infrastructure.Factories.Controllers.Interfaces;
 using Sources.BoundedContexts.Scenes.Infrastructure.Factories.Views.Implementation;
 using Sources.BoundedContexts.Scenes.Infrastructure.Factories.Views.Interfaces;
@@ -15,6 +16,9 @@ namespace Sources.App.DIContainers.MainMenu
             // Container.BindInterfacesAndSelfTo<MainMenuHud>().FromInstance(_mainMenuHud).AsSingle();
             Container.Bind<ISceneViewFactory>().To<MainMenuSceneViewFactory>().AsSingle();
             Container.Bind<ISceneFactory>().To<MainMenuSceneFactory>().AsSingle();
+            
+            //Forms
+            Container.Bind<MainMenuFormPresenterFactory>().AsSingle();
         }
     }
 }
