@@ -1,8 +1,4 @@
-﻿using Sources.Frameworks.GameServices.Overlaps.Implementation;
-using Sources.Frameworks.GameServices.Overlaps.Interfaces;
-using Sources.Frameworks.Services.Linecasts;
-using Sources.Frameworks.Services.Linecasts.Interfaces;
-using Zenject;
+﻿using Zenject;
 
 namespace Sources.App.DIContainers.Gameplay
 {
@@ -10,8 +6,6 @@ namespace Sources.App.DIContainers.Gameplay
     {
         public override void InstallBindings()
         {
-            Container.Bind<IOverlapService>().To<OverlapService>().AsSingle();
-            Container.Bind<ILinecastService>().To<LinecastService>().AsSingle();
         }
     }
 }
