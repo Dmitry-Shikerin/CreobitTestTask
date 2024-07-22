@@ -1233,6 +1233,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WalkerGameSceneContext
       objectReference: {fileID: 0}
+    - target: {fileID: 7228038940049312203, guid: 2655612b29d9a4242bcc9efa0cda522b, type: 3}
+      propertyPath: _hud
+      value: 
+      objectReference: {fileID: 779257403}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

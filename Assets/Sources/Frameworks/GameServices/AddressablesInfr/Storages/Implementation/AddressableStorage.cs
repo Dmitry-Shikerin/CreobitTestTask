@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
+using Sources.BoundedContexts.ClicckerAssets.Infrastructure.Services;
+using Sources.BoundedContexts.WalkerAssets.Infrastructure.Services;
 using Sources.Frameworks.GameServices.AddressablesInfr.AssetProviders.Implementation;
 using Sources.Frameworks.GameServices.AddressablesInfr.Storages.Interfaces;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using Zenject;
 
 namespace Sources.Frameworks.GameServices.AddressablesInfr.Storages.Implementation
 {
@@ -20,8 +23,8 @@ namespace Sources.Frameworks.GameServices.AddressablesInfr.Storages.Implementati
             _assetProviders = new Dictionary<Type, AssetProviderBase>();
         }
 
-        private void OnDestroy() =>
-            ReleaseAll();
+        // private void OnDestroy() =>
+        //     ReleaseAll();
 
         public async UniTask LoadAsset<T>() 
             where T : AssetProviderBase
@@ -49,9 +52,13 @@ namespace Sources.Frameworks.GameServices.AddressablesInfr.Storages.Implementati
             return (T)_assetProviders[typeof(T)];
         }
 
-        public void Construct()
+        [Inject]
+        private void Construct(
+            ClickerAssetProvider clickerAssetProvider, 
+            WalkerAssetProvider walkerAssetProvider)
         {
-            
+            _assetProviders[typeof(ClickerAssetProvider)] = clickerAssetProvider;
+            _assetProviders[typeof(WalkerAssetProvider)] = walkerAssetProvider;
         }
 
         private void ReleaseAll()

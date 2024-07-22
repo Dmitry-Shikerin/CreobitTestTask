@@ -8,15 +8,16 @@ namespace Sources.BoundedContexts.Scenes.Controllers
     public class MainMenuScene : IScene
     {
         private readonly ISceneViewFactory _sceneViewFactory;
-        private readonly ICurtainView _curtainView;
+        // private readonly ICurtainView _curtainView;
 
         public MainMenuScene(
-            ISceneViewFactory mainMenuSceneViewFactory,
-            ICurtainView curtainView)
+            ISceneViewFactory mainMenuSceneViewFactory
+            // ICurtainView curtainView
+            )
         {
             _sceneViewFactory = mainMenuSceneViewFactory ??
                                         throw new ArgumentNullException(nameof(mainMenuSceneViewFactory));
-            _curtainView = curtainView ?? throw new ArgumentNullException(nameof(curtainView));
+            // _curtainView = curtainView ?? throw new ArgumentNullException(nameof(curtainView));
         }
 
         public async void Enter(object payload = null)

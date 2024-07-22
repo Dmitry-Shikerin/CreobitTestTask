@@ -11,22 +11,24 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories.Controllers.Im
     public class MainMenuSceneFactory : ISceneFactory
     {
         private readonly ISceneViewFactory _sceneViewFactory;
-        private readonly ICurtainView _curtainView;
+        // private readonly ICurtainView _curtainView;
 
         public MainMenuSceneFactory(
-            ISceneViewFactory sceneViewFactory,
-            ICurtainView curtainView)
+            ISceneViewFactory sceneViewFactory
+            // ICurtainView curtainView
+            )
         {
             _sceneViewFactory = sceneViewFactory ??
                                         throw new ArgumentNullException(nameof(sceneViewFactory));
-            _curtainView = curtainView ?? throw new ArgumentNullException(nameof(curtainView));
+            // _curtainView = curtainView ?? throw new ArgumentNullException(nameof(curtainView));
         }
         
         public UniTask<IScene> Create(object payload)
         {
             IScene mainMenuScene = new MainMenuScene(
-                _sceneViewFactory,
-                _curtainView);
+                _sceneViewFactory
+                // _curtainView
+                );
             
             return UniTask.FromResult(mainMenuScene);
         }

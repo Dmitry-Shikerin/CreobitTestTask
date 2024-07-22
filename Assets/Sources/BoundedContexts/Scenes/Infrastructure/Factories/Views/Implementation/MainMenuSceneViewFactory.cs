@@ -1,6 +1,7 @@
 using System;
 using JetBrains.Annotations;
 using Sources.BoundedContexts.FormServices.Infrastructure.Factories;
+using Sources.BoundedContexts.MainMenuForms.Presentation.Implementation;
 using Sources.BoundedContexts.MainMenuHuds.Presentation.Views;
 using Sources.BoundedContexts.Scenes.Infrastructure.Factories.Views.Interfaces;
 using Sources.Frameworks.GameServices.Scenes.Domain.Interfaces;
@@ -23,7 +24,9 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories.Views.Implemen
     
         public void Create(IScenePayload payload)
         {
-            _mainMenuFormServiceFactory.Create();
+            _mainMenuFormServiceFactory
+                .Create()
+                .Show<MainMenuForm>();
         }
     }
 }
