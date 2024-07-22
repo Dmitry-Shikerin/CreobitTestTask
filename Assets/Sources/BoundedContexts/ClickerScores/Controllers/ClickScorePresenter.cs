@@ -2,7 +2,6 @@
 using Sources.BoundedContexts.ClickerScores.Domain;
 using Sources.BoundedContexts.ClickerScores.Presentations.Interfaces;
 using Sources.Frameworks.MVPPassiveView.Controllers.Implementation;
-using UnityEngine;
 
 namespace Sources.BoundedContexts.ClickerScores.Controllers
 {
