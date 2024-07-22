@@ -12,12 +12,13 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private readonly ICurtainView _curtainView;
 
         public ClickerGameScene(
-            ISceneViewFactory gameplaySceneViewFactory,
-            ICurtainView curtainView)
+            ISceneViewFactory gameplaySceneViewFactory
+            // ICurtainView curtainView
+            )
         {
             _gameplaySceneViewFactory = gameplaySceneViewFactory ?? 
                                         throw new ArgumentNullException(nameof(gameplaySceneViewFactory));
-            _curtainView = curtainView ?? throw new ArgumentNullException(nameof(curtainView));
+            // _curtainView = curtainView ?? throw new ArgumentNullException(nameof(curtainView));
         }
 
         public void Enter(object payload = null)

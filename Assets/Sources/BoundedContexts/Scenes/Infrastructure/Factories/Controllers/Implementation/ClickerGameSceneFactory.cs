@@ -14,19 +14,21 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories.Controllers.Im
         private readonly ICurtainView _curtainView;
 
         public ClickerGameSceneFactory(
-            ISceneViewFactory gameplaySceneViewFactory,
-            ICurtainView curtainView)
+            ISceneViewFactory gameplaySceneViewFactory
+            // ICurtainView curtainView
+            )
         {
             _sceneViewFactory = gameplaySceneViewFactory ?? 
                                 throw new ArgumentNullException(nameof(gameplaySceneViewFactory));
-            _curtainView = curtainView ?? throw new ArgumentNullException(nameof(curtainView));
+            // _curtainView = curtainView ?? throw new ArgumentNullException(nameof(curtainView));
         }
 
         public UniTask<IScene> Create(object payload)
         {
             IScene gameplayScene = new ClickerGameScene(
-                _sceneViewFactory,
-                _curtainView);
+                _sceneViewFactory
+                // _curtainView
+                );
 
             return UniTask.FromResult(gameplayScene);
         }
