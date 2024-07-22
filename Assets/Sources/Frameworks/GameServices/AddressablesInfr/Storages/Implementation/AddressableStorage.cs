@@ -23,15 +23,13 @@ namespace Sources.Frameworks.GameServices.AddressablesInfr.Storages.Implementati
         private void OnDestroy() =>
             ReleaseAll();
 
-        public async UniTask<T> LoadAsset<T>() 
+        public async UniTask LoadAsset<T>() 
             where T : AssetProviderBase
         {
             if (_assetProviders.ContainsKey(typeof(T)) == false)
                 throw new NullReferenceException(nameof(T));
             
             await _assetProviders[typeof(T)].LoadAsync();
-            
-             return (T)_assetProviders[typeof(T)];
         }
 
         public void Release<T>() 
@@ -41,6 +39,14 @@ namespace Sources.Frameworks.GameServices.AddressablesInfr.Storages.Implementati
                 throw new NullReferenceException(nameof(T));
 
             _assetProviders[typeof(T)].Release();
+        }
+
+        public T GetAsset<T>() where T : AssetProviderBase
+        {
+            if (_assetProviders.ContainsKey(typeof(T)) == false)
+                throw new NullReferenceException(nameof(T));
+            
+            return (T)_assetProviders[typeof(T)];
         }
 
         public void Construct()
