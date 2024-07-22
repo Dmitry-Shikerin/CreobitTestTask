@@ -6,6 +6,7 @@ using Sources.BoundedContexts.Scenes.Infrastructure.Factories.Views.Implementati
 using Sources.BoundedContexts.Scenes.Infrastructure.Factories.Views.Interfaces;
 using Sources.BoundedContexts.WalkerHudForms.Infrastructure.Factories;
 using Sources.BoundedContexts.WalkerHuds.Presentation;
+using Sources.Presentations.Views;
 using UnityEngine;
 using Zenject;
 
@@ -14,10 +15,12 @@ namespace Sources.App.DIContainers.Walkers
     public class WalkerGameInstaller : MonoInstaller
     {
         [SerializeField] private WalkerGameHud _hud;
+        [SerializeField] private ContainerView _containerView;
         
         public override void InstallBindings()
         {
             Container.Bind<WalkerGameHud>().FromInstance(_hud).AsSingle();
+            Container.Bind<ContainerView>().FromInstance(_containerView).AsSingle();
 
             Container.Bind<ISceneFactory>().To<WalkerGameSceneFactory>().AsSingle();
             Container.Bind<ISceneViewFactory>().To<WalkerGameSceneViewFactory>().AsSingle();

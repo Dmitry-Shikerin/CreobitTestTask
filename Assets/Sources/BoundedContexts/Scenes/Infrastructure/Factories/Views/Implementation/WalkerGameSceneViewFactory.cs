@@ -4,6 +4,7 @@ using Sources.BoundedContexts.FormServices.Infrastructure.Factories;
 using Sources.BoundedContexts.Scenes.Infrastructure.Factories.Views.Interfaces;
 using Sources.BoundedContexts.WalkerHudForms.Presentation.Implementation;
 using Sources.Frameworks.GameServices.Scenes.Domain.Interfaces;
+using UnityEngine;
 
 namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories.Views.Implementation
 {
