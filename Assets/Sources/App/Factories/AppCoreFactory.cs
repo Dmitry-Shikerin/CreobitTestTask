@@ -1,4 +1,12 @@
-﻿using Sources.App.Core;
+﻿using System;
+using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
+using Sources.App.Core;
+using Sources.BoundedContexts.Ids.Domain.Constant;
+using Sources.BoundedContexts.Scenes.Infrastructure.Factories.Controllers.Interfaces;
+using Sources.ControllersInterfaces.Scenes;
+using Sources.Frameworks.GameServices.Scenes.Services.Implementation;
+using Sources.InfrastructureInterfaces.Services.SceneLoaderService;
 using UnityEngine;
 using Zenject;
 using Object = UnityEngine.Object;
@@ -17,23 +25,23 @@ namespace Sources.App.Factories
             //     throw new NullReferenceException(nameof(CurtainView));
             // projectContext.Container.Bind<ICurtainView>().To<CurtainView>().FromInstance(curtainView);
             // curtainView.Hide();
-            //
-            // Dictionary<string, Func<object, SceneContext, UniTask<IScene>>> sceneFactories =
-            //     new Dictionary<string, Func<object, SceneContext, UniTask<IScene>>>();
-            // SceneService sceneService = new SceneService(sceneFactories);
-            // projectContext.Container.BindInterfacesAndSelfTo<SceneService>().FromInstance(sceneService);
-            //
-            // sceneFactories[ModelId.MainMenu] = (payload, sceneContext) =>
-            //     sceneContext.Container.Resolve<ISceneFactory>().Create(payload);
-            // sceneFactories[ModelId.Gameplay] = (payload, sceneContext) =>
-            //     sceneContext.Container.Resolve<ISceneFactory>().Create(payload);
+            
+            Dictionary<string, Func<object, SceneContext, UniTask<IScene>>> sceneFactories =
+                new Dictionary<string, Func<object, SceneContext, UniTask<IScene>>>();
+            SceneService sceneService = new SceneService(sceneFactories);
+            projectContext.Container.BindInterfacesAndSelfTo<SceneService>().FromInstance(sceneService);
+            
+            sceneFactories[ModelId.MainMenu] = (payload, sceneContext) =>
+                sceneContext.Container.Resolve<ISceneFactory>().Create(payload);
+            sceneFactories[ModelId.Gameplay] = (payload, sceneContext) =>
+                sceneContext.Container.Resolve<ISceneFactory>().Create(payload);
 
             // sceneService.AddBeforeSceneChangeHandler(async _ => await curtainView.ShowCurtain());
-            //
-            // sceneService.AddBeforeSceneChangeHandler(async sceneName =>
-            //     await projectContext.Container.Resolve<ISceneLoaderService>().LoadSceneAsync(sceneName));
-            //
-            // appCore.Construct(sceneService);
+            
+            sceneService.AddBeforeSceneChangeHandler(async sceneName =>
+                await projectContext.Container.Resolve<ISceneLoaderService>().LoadSceneAsync(sceneName));
+            
+            appCore.Construct(sceneService);
 
             return appCore;
         }
