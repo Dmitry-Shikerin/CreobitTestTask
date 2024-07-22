@@ -49,7 +49,7 @@ namespace Sources.BoundedContexts.MainMenuForms.Controllers
         private void LoadClickerScene()
         {
             //TODO сделать проверку на наличие ассетов
-            _sceneService.ChangeSceneAsync(ModelId.Clicker);
+            _sceneService.ChangeSceneAsync(ModelId.ClickerGame);
         }
 
         private void LoadClickerAssets()
@@ -63,7 +63,7 @@ namespace Sources.BoundedContexts.MainMenuForms.Controllers
 
         private void LoadWalkerScene()
         {
-            _sceneService.ChangeSceneAsync(ModelId.Walker);
+            _sceneService.ChangeSceneAsync(ModelId.WalkerGame);
         }
 
         private void LoadWalkerAssets()

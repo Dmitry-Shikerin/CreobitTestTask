@@ -20,8 +20,8 @@ namespace Sources.BoundedContexts.Ids.Domain.Constant
         public const string KillEnemyCounter = "KillEnemyCounter";
 
         //commonModels
-        public const string Clicker = "Clicker";
-        public const string Walker = "Walker";
+        public const string ClickerGame = "ClickerGame";
+        public const string WalkerGame = "WalkerGame";
         public const string ScoreCounter = "ScoreCounter";
         public const string MainMenu = "MainMenu";
         public const string SavedLevel = "SavedLevel";

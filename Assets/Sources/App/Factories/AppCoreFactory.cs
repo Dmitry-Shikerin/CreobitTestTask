@@ -33,7 +33,7 @@ namespace Sources.App.Factories
             
             sceneFactories[ModelId.MainMenu] = (payload, sceneContext) =>
                 sceneContext.Container.Resolve<ISceneFactory>().Create(payload);
-            sceneFactories[ModelId.Gameplay] = (payload, sceneContext) =>
+            sceneFactories[ModelId.ClickerGame] = (payload, sceneContext) =>
                 sceneContext.Container.Resolve<ISceneFactory>().Create(payload);
 
             // sceneService.AddBeforeSceneChangeHandler(async _ => await curtainView.ShowCurtain());
