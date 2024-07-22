@@ -8,12 +8,12 @@ using Sources.Frameworks.GameServices.Curtains.Presentation.Interfaces;
 
 namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories.Controllers.Implementation
 {
-    public class GameplaySceneFactory : ISceneFactory
+    public class ClickerGameSceneFactory : ISceneFactory
     {
         private readonly ISceneViewFactory _sceneViewFactory;
         private readonly ICurtainView _curtainView;
 
-        public GameplaySceneFactory(
+        public ClickerGameSceneFactory(
             ISceneViewFactory gameplaySceneViewFactory,
             ICurtainView curtainView)
         {
@@ -24,7 +24,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories.Controllers.Im
 
         public UniTask<IScene> Create(object payload)
         {
-            IScene gameplayScene = new GameplayScene(
+            IScene gameplayScene = new ClickerGameScene(
                 _sceneViewFactory,
                 _curtainView);
 

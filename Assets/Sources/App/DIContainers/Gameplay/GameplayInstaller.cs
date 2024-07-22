@@ -14,12 +14,12 @@ namespace Sources.App.DIContainers.Gameplay
             // Container.Bind<RootGameObject>().FromInstance(_rootGameObject);
             // Container.Bind<GameplayHud>().FromInstance(_gameplayHud);
             
-            Container.Bind<ISceneFactory>().To<GameplaySceneFactory>().AsSingle();
+            Container.Bind<ISceneFactory>().To<ClickerGameSceneFactory>().AsSingle();
             Container.Bind<ISceneViewFactory>().To<GameplaySceneViewFactory>().AsSingle();
             
-            //ModelsLoader
-            Container.Bind<GameplayModelsCreatorService>().AsSingle();
-            Container.Bind<GameplayModelsLoaderService>().AsSingle();
+            // //ModelsLoader
+            // Container.Bind<GameplayModelsCreatorService>().AsSingle();
+            // Container.Bind<GameplayModelsLoaderService>().AsSingle();
         }
     }
 }

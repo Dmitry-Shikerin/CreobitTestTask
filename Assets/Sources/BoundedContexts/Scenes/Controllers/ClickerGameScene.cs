@@ -6,12 +6,12 @@ using Sources.Frameworks.GameServices.Scenes.Domain.Interfaces;
 
 namespace Sources.BoundedContexts.Scenes.Controllers
 {
-    public class GameplayScene : IScene
+    public class ClickerGameScene : IScene
     {
         private readonly ISceneViewFactory _gameplaySceneViewFactory;
         private readonly ICurtainView _curtainView;
 
-        public GameplayScene(
+        public ClickerGameScene(
             ISceneViewFactory gameplaySceneViewFactory,
             ICurtainView curtainView)
         {
