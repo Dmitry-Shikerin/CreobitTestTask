@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03ffbce2e514e6eaedbe91a3ad6a6ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _trigger: {fileID: 0}
+  _trigger: {fileID: 1748833638}
 --- !u!1 &779257402
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1748833636}
   - component: {fileID: 1748833637}
+  - component: {fileID: 1748833638}
   m_Layer: 0
   m_Name: CharacterTrigger
   m_TagString: Untagged
@@ -806,6 +807,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9999991, y: 1, z: 0.76430607}
   m_Center: {x: 0, y: 0, z: -0.117846966}
+--- !u!114 &1748833638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748833635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 038e814e6a6d467182daeb9f23a70164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1763863448
 GameObject:
   m_ObjectHideFlags: 0
