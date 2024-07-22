@@ -1,6 +1,8 @@
 ﻿using Infrastructure.Services.Forms;
 using Sources.BoundedContexts.ClickerHudForms.Infrastructure.Factories.Controllers;
 using Sources.BoundedContexts.ClickerHuds.Presentation;
+using Sources.BoundedContexts.ClickerScores.Infrastructure.Factories.Controllers;
+using Sources.BoundedContexts.ClickerScores.Infrastructure.Factories.Views;
 using Sources.BoundedContexts.Finishes.Infrastructure.Factories.Controllers;
 using Sources.BoundedContexts.Finishes.Infrastructure.Factories.Views;
 using Sources.BoundedContexts.FormServices.Infrastructure.Factories;
@@ -35,6 +37,10 @@ namespace Sources.App.DIContainers.Clickers
             Container.Bind<ClickerFormServiceFactory>().AsSingle();
             
             Container.Bind<ClickerHudFormPresenterFactory>().AsSingle();
+            
+            //Score
+            Container.Bind<ClickScorePresenterFactory>().AsSingle();
+            Container.Bind<ClickScoreViewFactory>().AsSingle();
         }
     }
 }
