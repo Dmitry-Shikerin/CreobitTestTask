@@ -6,6 +6,7 @@ using Sources.BoundedContexts.Scenes.Infrastructure.Factories.Controllers.Implem
 using Sources.BoundedContexts.Scenes.Infrastructure.Factories.Controllers.Interfaces;
 using Sources.BoundedContexts.Scenes.Infrastructure.Factories.Views.Implementation;
 using Sources.BoundedContexts.Scenes.Infrastructure.Factories.Views.Interfaces;
+using Sources.BoundedContexts.WalkerFinishForms.Infrastructure.Factories;
 using Sources.BoundedContexts.WalkerHudForms.Infrastructure.Factories;
 using Sources.BoundedContexts.WalkerHuds.Presentation;
 using Sources.BoundedContexts.WalkerRoots.Presentation;
@@ -35,6 +36,7 @@ namespace Sources.App.DIContainers.Walkers
             Container.Bind<WalkerFormServiceFactory>().AsSingle();
 
             Container.Bind<WalkerHudFormPresenterFactory>().AsSingle();
+            Container.Bind<FinishFormPresenterFactory>().AsSingle();
             
             //finish
             Container.Bind<FinishPresenterFactory>().AsSingle();
