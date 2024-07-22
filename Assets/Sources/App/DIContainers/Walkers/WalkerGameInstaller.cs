@@ -10,6 +10,7 @@ using Sources.BoundedContexts.WalkerFinishForms.Infrastructure.Factories;
 using Sources.BoundedContexts.WalkerHudForms.Infrastructure.Factories;
 using Sources.BoundedContexts.WalkerHuds.Presentation;
 using Sources.BoundedContexts.WalkerRoots.Presentation;
+using Sources.BoundedContexts.WalkerStartForms.Infrastructure.Factories;
 using Sources.Presentations.Views;
 using UnityEngine;
 using Zenject;
@@ -37,6 +38,7 @@ namespace Sources.App.DIContainers.Walkers
 
             Container.Bind<WalkerHudFormPresenterFactory>().AsSingle();
             Container.Bind<FinishFormPresenterFactory>().AsSingle();
+            Container.Bind<StartFormPresenterFactory>().AsSingle();
             
             //finish
             Container.Bind<FinishPresenterFactory>().AsSingle();
