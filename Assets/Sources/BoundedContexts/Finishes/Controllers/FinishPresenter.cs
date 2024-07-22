@@ -25,6 +25,7 @@ namespace Sources.BoundedContexts.Finishes.Controllers
         public void Finish(CharacterView character)
         {
             _formService.Show<FinishForm>();
+            _view.StopTimer();
         }
     }
 }

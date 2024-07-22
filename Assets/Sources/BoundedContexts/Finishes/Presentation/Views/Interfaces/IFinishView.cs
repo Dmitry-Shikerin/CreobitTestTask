@@ -2,6 +2,6 @@
 {
     public interface IFinishView
     {
-    
+         void StopTimer();
     }
 }

@@ -39,6 +39,7 @@ namespace Sources.BoundedContexts.WalkerStartForms.Controllers
         private void StartGame()
         {
             _formService.Show<WalkerHudForm>();
+            _view.StartTimer();
         }
     }
 }
