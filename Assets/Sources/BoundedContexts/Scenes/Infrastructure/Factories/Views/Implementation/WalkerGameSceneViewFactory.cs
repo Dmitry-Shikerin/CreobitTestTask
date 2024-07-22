@@ -6,6 +6,7 @@ using Sources.BoundedContexts.Scenes.Infrastructure.Factories.Views.Interfaces;
 using Sources.BoundedContexts.WalkerHudForms.Presentation.Implementation;
 using Sources.BoundedContexts.WalkerHuds.Presentation;
 using Sources.BoundedContexts.WalkerRoots.Presentation;
+using Sources.BoundedContexts.WalkerStartForms.Presentations.Implementation;
 using Sources.Frameworks.GameServices.Scenes.Domain.Interfaces;
 using UnityEngine;
 
@@ -35,7 +36,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories.Views.Implemen
         {
             _formServiceFactory
                 .Create()
-                .Show<WalkerHudForm>();
+                .Show<StartForm>();
 
             _finishViewFactory.Create(_root.FinishView);
         }
